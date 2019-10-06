@@ -5,19 +5,23 @@ package io.tollefsen.fant.data.model;
  */
 public class LoggedInUser {
 
-    private String userId;
+    private String email;
     private String token;
 
-    public LoggedInUser(String userId, String token) {
-        this.userId = userId;
+    public LoggedInUser(String email, String token) {
+        this.email = email;
         this.token = token;
     }
 
-    public String getUserId() {
-        return userId;
+    public String getEmail() {
+        return email;
     }
 
     public String getDisplayName() {
+        return getEmail();
+    }
+
+    public String getToken() {
         return token;
     }
 }
