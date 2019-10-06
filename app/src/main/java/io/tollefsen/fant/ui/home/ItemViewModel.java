@@ -16,50 +16,50 @@ import org.json.JSONException;
 import java.util.ArrayList;
 import java.util.List;
 
-import io.tollefsen.fant.data.model.Sellable;
+import io.tollefsen.fant.data.model.Item;
 
-public class SellableViewModel extends AndroidViewModel {
-    MutableLiveData<List<Sellable>> sellables;
-    MutableLiveData<Sellable> selected = new MutableLiveData<>();
+public class ItemViewModel extends AndroidViewModel {
+    MutableLiveData<List<Item>> items;
+    MutableLiveData<Item> selected = new MutableLiveData<>();
 
     RequestQueue requestQueue;
 
-    public SellableViewModel(Application context) {
+    public ItemViewModel(Application context) {
         super(context);
         requestQueue = Volley.newRequestQueue(context);
     }
 
-    public LiveData<List<Sellable>> getSellables() {
-        if(sellables == null) {
-            sellables = new MutableLiveData<>();
-            loadSellables();
+    public LiveData<List<Item>> getItems() {
+        if(items == null) {
+            items = new MutableLiveData<>();
+            loadItems();
         }
 
-        return sellables;
+        return items;
     }
 
-    public LiveData<Sellable> getSelected() {
+    public LiveData<Item> getSelected() {
         return selected;
     }
 
 
-    public void setSelected(Sellable selected) {
+    public void setSelected(Item selected) {
         this.selected.setValue(selected);
     }
 
-    protected void loadSellables() {
-        String url = "http://158.38.101.138/api/fant";
+    protected void loadItems() {
+        String url = "http://192.168.1.87:8080/api/item/all";
         JsonArrayRequest jar = new JsonArrayRequest(Request.Method.GET,url,null,
             response -> {
-                List<Sellable> sellables = new ArrayList<>();
+                List<Item> items = new ArrayList<>();
                 try {
                     for (int i = 0; i < response.length(); i++) {
-                        sellables.add(new Sellable(response.getJSONObject(i)));
+                        items.add(new Item(response.getJSONObject(i)));
                     }
                 } catch (JSONException jex) {
                     System.out.println(jex);
                 }
-                this.sellables.setValue(sellables);
+                this.items.setValue(items);
             }, System.out::println);
         requestQueue.add(jar);
     }

@@ -19,7 +19,7 @@ import java.util.Locale;
 import io.tollefsen.fant.R;
 
 
-public class SellableDetailFragment extends Fragment {
+public class ItemDetailFragment extends Fragment {
 
     ImageView photo;
     TextView description;
@@ -28,14 +28,14 @@ public class SellableDetailFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        SellableViewModel model = ViewModelProviders.of(this.getActivity()).get(SellableViewModel.class);
-        model.getSelected().observe(this, sellable -> {
-            String url = "http://158.38.101.138/api/fant/photo/" + sellable.getPhotos().get(0);
+        ItemViewModel model = ViewModelProviders.of(this.getActivity()).get(ItemViewModel.class);
+        model.getSelected().observe(this, item -> {
+            String url = "http://192.168.1.87:8080/api/item/image?id=" + item.getId();
             Picasso.get().load(url).into(photo);
-            ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle(sellable.getTitle());
-            description.setText(sellable.getDescription());
+            ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle(item.getTitle());
+            description.setText(item.getDescription());
 
-            price.setText(String.format(Locale.getDefault(),"%.2f",sellable.getPrice()));
+            price.setText(String.format(Locale.getDefault(),"%.2f",item.getPrice()));
         });
     }
 
@@ -43,7 +43,7 @@ public class SellableDetailFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View result = inflater.inflate(R.layout.fragment_sellable_detail, container, false);
+        View result = inflater.inflate(R.layout.fragment_item_detail, container, false);
 
         photo = result.findViewById(R.id.photo);
         description = result.findViewById(R.id.description);

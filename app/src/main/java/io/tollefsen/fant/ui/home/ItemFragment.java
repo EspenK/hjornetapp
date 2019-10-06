@@ -16,17 +16,17 @@ import io.tollefsen.fant.R;
 /**
  * A fragment representing a list of Items.
  */
-public class SellableFragment extends Fragment {
+public class ItemFragment extends Fragment {
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        RecyclerView view = (RecyclerView) inflater.inflate(R.layout.fragment_sellable_list, container, false);
+        RecyclerView view = (RecyclerView) inflater.inflate(R.layout.fragment_item_list, container, false);
         view.setLayoutManager(new LinearLayoutManager(view.getContext()));
-        SellableViewModel model = ViewModelProviders.of(this.getActivity()).get(SellableViewModel.class);
-        model.getSellables().observe(this, sellables ->
-                view.setAdapter(new SellableRecyclerViewAdapter(sellables)));
+        ItemViewModel model = ViewModelProviders.of(this.getActivity()).get(ItemViewModel.class);
+        model.getItems().observe(this, items ->
+                view.setAdapter(new ItemRecyclerViewAdapter(items)));
         return view;
     }
 }

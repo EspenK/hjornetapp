@@ -11,19 +11,19 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import io.tollefsen.fant.R;
-import io.tollefsen.fant.data.model.Sellable;
+import io.tollefsen.fant.data.model.Item;
 
 import java.util.List;
 
 /**
  */
-public class SellableRecyclerViewAdapter extends RecyclerView.Adapter<SellableRecyclerViewAdapter.ViewHolder> {
+public class ItemRecyclerViewAdapter extends RecyclerView.Adapter<ItemRecyclerViewAdapter.ViewHolder> {
 
-    private final List<Sellable> mValues;
+    private final List<Item> mValues;
 
-    SellableViewModel model;
+    ItemViewModel model;
 
-    public SellableRecyclerViewAdapter(List<Sellable> items) {
+    public ItemRecyclerViewAdapter(List<Item> items) {
         mValues = items;
     }
 
@@ -31,9 +31,9 @@ public class SellableRecyclerViewAdapter extends RecyclerView.Adapter<SellableRe
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.fragment_sellable, parent, false);
+                .inflate(R.layout.fragment_item, parent, false);
 
-        model = ViewModelProviders.of((FragmentActivity) parent.getContext()).get(SellableViewModel.class);
+        model = ViewModelProviders.of((FragmentActivity) parent.getContext()).get(ItemViewModel.class);
         return new ViewHolder(view);
     }
 
@@ -55,7 +55,7 @@ public class SellableRecyclerViewAdapter extends RecyclerView.Adapter<SellableRe
         public final View mView;
         public final TextView mIdView;
         public final TextView mContentView;
-        public Sellable mItem;
+        public Item mItem;
 
         public ViewHolder(View view) {
             super(view);

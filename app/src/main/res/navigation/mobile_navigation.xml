@@ -7,12 +7,12 @@
 
     <fragment
         android:id="@+id/nav_home"
-        android:name="io.tollefsen.fant.ui.home.SellableFragment"
+        android:name="io.tollefsen.fant.ui.home.ItemFragment"
         android:label="@string/menu_home"
-        tools:layout="@layout/fragment_sellable_list" >
+        tools:layout="@layout/fragment_item_list" >
         <action
-            android:id="@+id/actionSellableDetailFragment"
-            app:destination="@id/sellableDetailFragment"
+            android:id="@+id/actionItemDetailFragment"
+            app:destination="@id/itemDetailFragment"
             app:enterAnim="@anim/nav_default_enter_anim"
             app:exitAnim="@anim/nav_default_pop_exit_anim" />
     </fragment>
@@ -47,9 +47,9 @@
         android:label="@string/menu_send"
         tools:layout="@layout/fragment_send" />
     <fragment
-        android:id="@+id/sellableDetailFragment"
-        android:name="io.tollefsen.fant.ui.home.SellableDetailFragment"
-        android:label="fragment_sellable_detail"
-        tools:layout="@layout/fragment_sellable_detail" >
+        android:id="@+id/itemDetailFragment"
+        android:name="io.tollefsen.fant.ui.home.ItemDetailFragment"
+        android:label="fragment_item_detail"
+        tools:layout="@layout/fragment_item_detail" >
     </fragment>
 </navigation>

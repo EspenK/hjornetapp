@@ -25,7 +25,7 @@ import androidx.appcompat.widget.Toolbar;
 import android.view.Menu;
 
 
-import io.tollefsen.fant.ui.home.SellableViewModel;
+import io.tollefsen.fant.ui.home.ItemViewModel;
 import io.tollefsen.fant.ui.login.LoginActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(view -> Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+        fab.setOnClickListener(view -> Snackbar.make(view, "Doing stuff (not really)...", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show());
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
@@ -55,8 +55,8 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
-        ViewModelProviders.of(this).get(SellableViewModel.class).getSelected().observe(this, selected ->
-                navController.navigate(R.id.actionSellableDetailFragment));
+        ViewModelProviders.of(this).get(ItemViewModel.class).getSelected().observe(this, selected ->
+                navController.navigate(R.id.actionItemDetailFragment));
 
     }
 

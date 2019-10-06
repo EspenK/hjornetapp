@@ -8,10 +8,10 @@ import lombok.NoArgsConstructor;
 
 @Data @NoArgsConstructor
 public class User {
-    String userid;
+    String email;
 
     public User(JSONObject job) throws JSONException {
-        if (job.has("userid"))
-            setUserid(job.getString("userid"));
+        if (job.has("email"))
+            setEmail(job.getString("email"));
     }
 }
