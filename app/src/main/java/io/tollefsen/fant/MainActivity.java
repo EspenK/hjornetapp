@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.login:
+            case R.id.signup:
                 startActivity(new Intent(this, LoginActivity.class));
                 return true;
             default:
