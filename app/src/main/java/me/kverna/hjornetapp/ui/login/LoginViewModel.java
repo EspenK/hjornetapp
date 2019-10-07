@@ -10,11 +10,12 @@ import me.kverna.hjornetapp.data.LoginRepository;
 import me.kverna.hjornetapp.data.Result;
 import me.kverna.hjornetapp.data.model.LoggedInUser;
 import me.kverna.hjornetapp.R;
+import me.kverna.hjornetapp.ui.TaskResult;
 
 public class LoginViewModel extends ViewModel {
 
     private MutableLiveData<LoginFormState> loginFormState = new MutableLiveData<>();
-    private MutableLiveData<LoginResult> loginResult = new MutableLiveData<>();
+    private MutableLiveData<TaskResult<LoggedInUserView>> loginResult = new MutableLiveData<>();
     private LoginRepository loginRepository;
 
     LoginViewModel(LoginRepository loginRepository) {
@@ -25,7 +26,7 @@ public class LoginViewModel extends ViewModel {
         return loginFormState;
     }
 
-    LiveData<LoginResult> getLoginResult() {
+    LiveData<TaskResult<LoggedInUserView>> getLoginResult() {
         return loginResult;
     }
 
@@ -39,12 +40,14 @@ public class LoginViewModel extends ViewModel {
 
             @Override
             protected void onPostExecute(Result result) {
+                TaskResult<LoggedInUserView> tr = new TaskResult<>();
                 if (result instanceof Result.Success) {
                     LoggedInUser data = ((Result.Success<LoggedInUser>) result).getData();
-                    loginResult.setValue(new LoginResult(new LoggedInUserView(data.getDisplayName())));
+                    tr.setSuccess(new LoggedInUserView(data.getDisplayName()));
                 } else {
-                    loginResult.setValue(new LoginResult(R.string.login_failed));
+                    tr.setError(R.string.login_failed);
                 }
+                loginResult.setValue(tr);
             }
         }.execute();
     }

@@ -28,6 +28,14 @@ public class LoginRepository {
         return instance;
     }
 
+    public static LoginRepository getInstance() {
+        return instance;
+    }
+
+    public String getToken() {
+        return user.getToken();
+    }
+
     public boolean isLoggedIn() {
         return user != null;
     }
