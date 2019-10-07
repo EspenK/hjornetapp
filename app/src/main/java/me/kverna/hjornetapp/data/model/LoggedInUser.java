@@ -5,20 +5,20 @@ package me.kverna.hjornetapp.data.model;
  */
 public class LoggedInUser {
 
-    private String email;
+    private User user;
     private String token;
 
-    public LoggedInUser(String email, String token) {
-        this.email = email;
+    public LoggedInUser(User user, String token) {
+        this.user = user;
         this.token = token;
     }
 
     public String getEmail() {
-        return email;
+        return user.getEmail();
     }
 
     public String getDisplayName() {
-        return getEmail();
+        return user.getFirstName() + " " + user.getLastName();
     }
 
     public String getToken() {
