@@ -22,6 +22,7 @@ import me.kverna.hjornetapp.R;
 public class ItemDetailFragment extends Fragment {
 
     ImageView photo;
+    TextView title;
     TextView description;
     TextView price;
 
@@ -33,9 +34,10 @@ public class ItemDetailFragment extends Fragment {
             String url = "http://192.168.1.87:8080/api/item/image?id=" + item.getId();
             Picasso.get().load(url).into(photo);
             ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle(item.getTitle());
-            description.setText(item.getDescription());
 
+            description.setText(item.getDescription());
             price.setText(String.format(Locale.getDefault(),"%.2f",item.getPrice()));
+            title.setText(item.getTitle());
         });
     }
 
@@ -48,6 +50,7 @@ public class ItemDetailFragment extends Fragment {
         photo = result.findViewById(R.id.photo);
         description = result.findViewById(R.id.description);
         price = result.findViewById(R.id.price);
+        title = result.findViewById(R.id.title);
 
         return  result;
     }
