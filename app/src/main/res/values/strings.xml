@@ -37,6 +37,10 @@
     <string name="postalCode">Postal code</string>
     <string name="signup">Sign up</string>
 
+    <string name="title">Title</string>
+    <string name="price">Price</string>
+    <string name="description">Description</string>
+    <string name="addImage">Add image</string>
     <string name="newItem">New item</string>
 
     <!-- TODO: Remove or change this placeholder text -->
