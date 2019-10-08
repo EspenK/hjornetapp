@@ -18,6 +18,8 @@ import java.util.Locale;
 
 import me.kverna.hjornetapp.R;
 
+import static me.kverna.hjornetapp.HjornetApi.ITEM_IMAGE;
+
 
 public class ItemDetailFragment extends Fragment {
 
@@ -31,7 +33,7 @@ public class ItemDetailFragment extends Fragment {
         super.onCreate(savedInstanceState);
         ItemViewModel model = ViewModelProviders.of(this.getActivity()).get(ItemViewModel.class);
         model.getSelected().observe(this, item -> {
-            String url = "http://192.168.1.87:8080/api/item/image?id=" + item.getId();
+            String url = ITEM_IMAGE + "?id=" + item.getId();
             Picasso.get().load(url).into(photo);
             ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle(item.getTitle());
 

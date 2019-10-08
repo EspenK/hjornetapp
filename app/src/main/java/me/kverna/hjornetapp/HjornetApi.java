@@ -1,7 +1,7 @@
 package me.kverna.hjornetapp;
 
 public class HjornetApi {
-    public static final String API_URL = "http://pckvalvi-kanten.uials.no:8080/api/";
+    public static final String API_URL = "http://192.168.1.87:8080/api/";
 
     public static final String AUTH_LOGIN = API_URL + "auth/login";
     public static final String AUTH_CREATE = API_URL + "auth/create";

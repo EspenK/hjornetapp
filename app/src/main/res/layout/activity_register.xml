@@ -12,14 +12,14 @@
     tools:context=".ui.user.login.LoginActivity">
 
     <Button
-        android:id="@+id/signup"
+        android:id="@+id/register"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_gravity="start"
         android:layout_marginStart="24dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="24dp"
-        android:enabled="false"
+        android:enabled="true"
         android:text="@string/register"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -50,7 +50,8 @@
         android:layout_marginEnd="24dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="@string/postalArea"
+        android:hint="@string/postalArea"
+        android:autofillHints="@string/postalArea"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/streetAddress" />
@@ -64,7 +65,8 @@
         android:layout_marginEnd="24dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="@string/phoneNumber"
+        android:hint="@string/phoneNumber"
+        android:autofillHints="@string/phoneNumber"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/password" />
@@ -78,7 +80,8 @@
         android:layout_marginEnd="24dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="@string/firstName"
+        android:hint="@string/firstName"
+        android:autofillHints="@string/firstName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -94,7 +97,6 @@
         android:hint="@string/email"
         android:inputType="textEmailAddress"
         android:selectAllOnFocus="true"
-        android:text="@string/email"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -109,11 +111,10 @@
         android:layout_marginEnd="24dp"
         android:autofillHints="@string/password"
         android:hint="@string/password"
-        android:imeActionLabel="@string/action_sign_in_short"
+        android:imeActionLabel="@string/login"
         android:imeOptions="actionDone"
         android:inputType="textPassword"
         android:selectAllOnFocus="true"
-        android:text="@string/password"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/email" />
@@ -127,7 +128,8 @@
         android:layout_marginEnd="24dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="@string/streetAddress"
+        android:hint="@string/streetAddress"
+        android:autofillHints="@string/streetAddress"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/phoneNumber" />
@@ -141,7 +143,8 @@
         android:layout_marginEnd="24dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="@string/lastName"
+        android:hint="@string/lastName"
+        android:autofillHints="@string/lastName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/firstName" />
@@ -155,7 +158,8 @@
         android:layout_marginEnd="24dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="@string/postalCode"
+        android:hint="@string/postalCode"
+        android:autofillHints="@string/postalCode"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/postalArea" />

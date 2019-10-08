@@ -28,7 +28,7 @@ public class RegisterActivity extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_new_item);
+        setContentView(R.layout.activity_register);
         registerViewModel = ViewModelProviders.of(this, new RegisterViewModelFactory())
                 .get(RegisterViewModel.class);
 
@@ -41,7 +41,7 @@ public class RegisterActivity extends AppCompatActivity {
         postalAreaEditText = findViewById(R.id.postalArea);
         postalCodeEditText = findViewById(R.id.postalCode);
 
-        register = findViewById(R.id.newItem);
+        register = findViewById(R.id.register);
 
         registerViewModel.getTaskResult().observe(this, taskResult -> {
             if (taskResult == null) {

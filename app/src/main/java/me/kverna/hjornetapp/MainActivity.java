@@ -27,6 +27,7 @@ import android.view.Menu;
 import me.kverna.hjornetapp.ui.item.ItemViewModel;
 import me.kverna.hjornetapp.ui.item.newitem.NewItemActivity;
 import me.kverna.hjornetapp.ui.user.login.LoginActivity;
+import me.kverna.hjornetapp.ui.user.register.RegisterActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -77,6 +78,9 @@ public class MainActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.signup:
                 startActivity(new Intent(this, LoginActivity.class));
+                return true;
+            case R.id.register:
+                startActivity(new Intent(this, RegisterActivity.class));
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

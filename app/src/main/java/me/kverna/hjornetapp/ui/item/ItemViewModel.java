@@ -18,6 +18,8 @@ import java.util.List;
 
 import me.kverna.hjornetapp.data.model.Item;
 
+import static me.kverna.hjornetapp.HjornetApi.ITEM_ALL;
+
 public class ItemViewModel extends AndroidViewModel {
     MutableLiveData<List<Item>> items;
     MutableLiveData<Item> selected = new MutableLiveData<>();
@@ -48,7 +50,7 @@ public class ItemViewModel extends AndroidViewModel {
     }
 
     protected void loadItems() {
-        String url = "http://192.168.1.87:8080/api/item/all";
+        String url = ITEM_ALL;
         JsonArrayRequest jar = new JsonArrayRequest(Request.Method.GET,url,null,
             response -> {
                 List<Item> items = new ArrayList<>();

@@ -18,7 +18,7 @@ import me.kverna.hjornetapp.R;
 import me.kverna.hjornetapp.data.Result;
 import me.kverna.hjornetapp.ui.TaskResult;
 
-import static me.kverna.hjornetapp.HjornetApi.ITEM_CREATE;
+import static me.kverna.hjornetapp.HjornetApi.AUTH_CREATE;
 
 public class RegisterViewModel extends ViewModel {
     private MutableLiveData<TaskResult<Integer>> taskResult = new MutableLiveData<>();
@@ -42,7 +42,7 @@ public class RegisterViewModel extends ViewModel {
                 HttpURLConnection connection = null;
 
                 try {
-                    URL url = new URL(ITEM_CREATE);
+                    URL url = new URL(AUTH_CREATE);
                     connection = (HttpURLConnection) url.openConnection();
                     connection.setUseCaches(false);
                     connection.setRequestMethod("POST");
@@ -50,7 +50,7 @@ public class RegisterViewModel extends ViewModel {
 
                     // create json object of the input data
                     JSONObject dataJson = new JSONObject();
-                    dataJson.put("fistName", firstName);
+                    dataJson.put("firstName", firstName);
                     dataJson.put("lastName", lastName);
                     dataJson.put("email", email);
                     dataJson.put("password", password);
