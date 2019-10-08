@@ -15,7 +15,7 @@
             android:name="me.kverna.hjornetapp.ui.login.LoginActivity"
             android:label="@string/title_activity_login"></activity>
         <activity
-            android:name="me.kverna.hjornetapp.ui.item.NewItemActivity"
+            android:name=".ui.item.newitem.NewItemActivity"
             android:label="@string/newItem"></activity>
         <activity
             android:name="me.kverna.hjornetapp.MainActivity"

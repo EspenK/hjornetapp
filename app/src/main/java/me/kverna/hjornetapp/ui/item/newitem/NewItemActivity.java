@@ -1,4 +1,4 @@
-package me.kverna.hjornetapp.ui.item;
+package me.kverna.hjornetapp.ui.item.newitem;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -19,6 +19,7 @@ public class NewItemActivity extends AppCompatActivity {
     private EditText titleEditText;
     private EditText priceEditText;
     private EditText descriptionEditText;
+    private Button newItemButton;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -30,7 +31,7 @@ public class NewItemActivity extends AppCompatActivity {
         titleEditText = findViewById(R.id.title);
         priceEditText = findViewById(R.id.price);
         descriptionEditText = findViewById(R.id.description);
-        final Button newItemButton = findViewById(R.id.newItem);
+        newItemButton = findViewById(R.id.newItem);
 
         newItemViewModel.getTaskResult().observe(this, taskResult -> {
             if (taskResult == null) {

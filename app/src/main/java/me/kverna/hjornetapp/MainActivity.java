@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 
 import android.view.MenuItem;
 
@@ -25,8 +24,8 @@ import androidx.appcompat.widget.Toolbar;
 import android.view.Menu;
 
 
-import me.kverna.hjornetapp.ui.home.ItemViewModel;
-import me.kverna.hjornetapp.ui.item.NewItemActivity;
+import me.kverna.hjornetapp.ui.item.ItemViewModel;
+import me.kverna.hjornetapp.ui.item.newitem.NewItemActivity;
 import me.kverna.hjornetapp.ui.login.LoginActivity;
 
 public class MainActivity extends AppCompatActivity {

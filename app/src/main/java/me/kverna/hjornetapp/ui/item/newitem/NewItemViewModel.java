@@ -1,4 +1,4 @@
-package me.kverna.hjornetapp.ui.item;
+package me.kverna.hjornetapp.ui.item.newitem;
 
 import android.annotation.SuppressLint;
 import android.os.AsyncTask;

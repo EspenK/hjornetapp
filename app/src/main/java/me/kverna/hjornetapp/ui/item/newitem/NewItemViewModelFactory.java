@@ -1,4 +1,4 @@
-package me.kverna.hjornetapp.ui.item;
+package me.kverna.hjornetapp.ui.item.newitem;
 
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;

@@ -1,4 +1,4 @@
-package me.kverna.hjornetapp.ui.home;
+package me.kverna.hjornetapp.ui.item;
 
 import androidx.fragment.app.FragmentActivity;
 import androidx.lifecycle.ViewModelProviders;
