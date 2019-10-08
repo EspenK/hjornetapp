@@ -1,4 +1,4 @@
-package me.kverna.hjornetapp.ui.login;
+package me.kverna.hjornetapp.ui.user.login;
 
 /**
  * Class exposing authenticated user details to the UI.

@@ -1,4 +1,4 @@
-package me.kverna.hjornetapp.ui.login;
+package me.kverna.hjornetapp.ui.user.login;
 
 import androidx.annotation.Nullable;
 

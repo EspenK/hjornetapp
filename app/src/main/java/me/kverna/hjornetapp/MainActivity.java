@@ -26,7 +26,7 @@ import android.view.Menu;
 
 import me.kverna.hjornetapp.ui.item.ItemViewModel;
 import me.kverna.hjornetapp.ui.item.newitem.NewItemActivity;
-import me.kverna.hjornetapp.ui.login.LoginActivity;
+import me.kverna.hjornetapp.ui.user.login.LoginActivity;
 
 public class MainActivity extends AppCompatActivity {
 
