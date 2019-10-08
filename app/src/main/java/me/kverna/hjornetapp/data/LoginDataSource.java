@@ -12,6 +12,9 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 
+import static me.kverna.hjornetapp.HjornetApi.AUTH_CURRENT_USER;
+import static me.kverna.hjornetapp.HjornetApi.AUTH_LOGIN;
+
 /**
  * Class that handles authentication w/ login credentials and retrieves user information.
  */
@@ -21,7 +24,7 @@ public class LoginDataSource {
         String token;
         HttpURLConnection connection = null;
         try {
-            URL url = new URL("http://192.168.1.87:8080/api/auth/login?email=" + email + "&password=" + password);
+            URL url = new URL(AUTH_LOGIN + "?email=" + email + "&password=" + password);
             connection = (HttpURLConnection) url.openConnection();
             connection.setUseCaches(true);
             connection.setRequestMethod("GET");
@@ -42,7 +45,7 @@ public class LoginDataSource {
         }
 
         try {
-            URL url = new URL("http:192.168.1.87:8080/api/auth/currentuser");
+            URL url = new URL(AUTH_CURRENT_USER);
             connection = (HttpURLConnection) url.openConnection();
             connection.setUseCaches(true);
             connection.setRequestMethod("GET");

@@ -20,6 +20,8 @@ import me.kverna.hjornetapp.data.LoginRepository;
 import me.kverna.hjornetapp.data.Result;
 import me.kverna.hjornetapp.ui.TaskResult;
 
+import static me.kverna.hjornetapp.HjornetApi.ITEM_CREATE;
+
 public class NewItemViewModel extends ViewModel {
     private MutableLiveData<TaskResult<Integer>> taskResult = new MutableLiveData<>();
 
@@ -40,7 +42,7 @@ public class NewItemViewModel extends ViewModel {
                 }
 
                 try {
-                    URL url = new URL("http://192.168.1.87:8080/api/item/create");
+                    URL url = new URL(ITEM_CREATE);
                     connection = (HttpURLConnection) url.openConnection();
                     connection.setUseCaches(false);
                     connection.setRequestMethod("POST");
