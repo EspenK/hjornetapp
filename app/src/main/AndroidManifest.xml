@@ -18,6 +18,9 @@
             android:name=".ui.item.newitem.NewItemActivity"
             android:label="@string/newItem"></activity>
         <activity
+            android:name=".ui.user.register.RegisterActivity"
+            android:label="@string/register" />
+        <activity
             android:name="me.kverna.hjornetapp.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">

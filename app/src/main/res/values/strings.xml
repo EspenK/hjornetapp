@@ -8,24 +8,6 @@
     <string name="action_settings">Settings</string>
 
     <string name="menu_home">Home</string>
-    <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
-    <string name="menu_tools">Tools</string>
-    <string name="menu_share">Share</string>
-    <string name="menu_send">Send</string>
-    <string name="title_activity_login">Sign in</string>
-    <string name="prompt_email">Email</string>
-    <string name="prompt_password">Password</string>
-    <string name="action_sign_in">Sign in or register</string>
-    <string name="action_sign_in_short">Sign in</string>
-    <string name="welcome">"Welcome!"</string>
-    <string name="invalid_username">Not a valid username</string>
-    <string name="invalid_password">Password must be >5 characters</string>
-    <string name="login_failed">"Login failed"</string>
-    <string name="login">Login</string>
-    <string name="button">My Button</string>
-    <string name="button_buy">Buy</string>
-    <string name="button_register">Register</string>
 
     <string name="firstName">First name</string>
     <string name="lastName">Last name</string>
@@ -35,7 +17,18 @@
     <string name="streetAddress">Street address</string>
     <string name="postalArea">Postal area</string>
     <string name="postalCode">Postal code</string>
-    <string name="signup">Sign up</string>
+
+    <string name="register">Sign up</string>
+    <string name="registerSuccess">Successfully registered</string>
+    <string name="registerError">Error registering</string>
+
+    <string name="title_activity_login">Sign in</string>
+    <string name="login">Sign in</string>
+    <string name="welcome">"Welcome!"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="loginError">"Login failed"</string>
+
 
     <string name="title">Title</string>
     <string name="price">Price</string>
@@ -44,6 +37,8 @@
     <string name="newItem">New item</string>
     <string name="newItemSuccess">New item created successfully</string>
     <string name="newItemError">New item failed to be created</string>
+
+    <string name="buy">Buy</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
