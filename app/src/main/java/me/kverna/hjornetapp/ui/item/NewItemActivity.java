@@ -1,5 +1,6 @@
 package me.kverna.hjornetapp.ui.item;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -15,6 +16,9 @@ import me.kverna.hjornetapp.R;
 
 public class NewItemActivity extends AppCompatActivity {
     private NewItemViewModel newItemViewModel;
+    private EditText titleEditText;
+    private EditText priceEditText;
+    private EditText descriptionEditText;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -23,9 +27,9 @@ public class NewItemActivity extends AppCompatActivity {
         newItemViewModel = ViewModelProviders.of(this, new NewItemViewModelFactory())
                 .get(NewItemViewModel.class);
 
-        final EditText titleEditText = findViewById(R.id.title);
-        final EditText priceEditText = findViewById(R.id.price);
-        final EditText descriptionEditText = findViewById(R.id.description);
+        titleEditText = findViewById(R.id.title);
+        priceEditText = findViewById(R.id.price);
+        descriptionEditText = findViewById(R.id.description);
         final Button newItemButton = findViewById(R.id.newItem);
 
         newItemViewModel.getTaskResult().observe(this, taskResult -> {
@@ -33,11 +37,12 @@ public class NewItemActivity extends AppCompatActivity {
                 return;
             }
 
-            if (taskResult.getError() != null) {
-                makeToast(taskResult.getError());
-            }
-            if (taskResult.getSuccess() != null) {
+            if (taskResult.isSuccess()) {
                 makeToast(taskResult.getSuccess());
+                setResult(Activity.RESULT_OK);
+                finish();
+            } else {
+                makeToast(taskResult.getError());
             }
         });
 

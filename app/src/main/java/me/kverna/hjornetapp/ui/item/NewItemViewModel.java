@@ -81,6 +81,7 @@ public class NewItemViewModel extends ViewModel {
                 } else {
                     tr.setError(R.string.newItemError);
                 }
+                taskResult.setValue(tr);
             }
         }.execute();
     }

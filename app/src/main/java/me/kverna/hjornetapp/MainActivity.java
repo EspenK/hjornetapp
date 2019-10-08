@@ -26,6 +26,7 @@ import android.view.Menu;
 
 
 import me.kverna.hjornetapp.ui.home.ItemViewModel;
+import me.kverna.hjornetapp.ui.item.NewItemActivity;
 import me.kverna.hjornetapp.ui.login.LoginActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -39,8 +40,7 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(view -> Snackbar.make(view, "Doing stuff (not really)...", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show());
+        fab.setOnClickListener(view -> startActivity(new Intent(MainActivity.this, NewItemActivity.class)));
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
 

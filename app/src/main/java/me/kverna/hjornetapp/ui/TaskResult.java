@@ -28,4 +28,8 @@ public class TaskResult<T> {
     public Integer getError() {
         return error;
     }
+
+    public boolean isSuccess() {
+        return success != null && error == null;
+    }
 }

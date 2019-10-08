@@ -54,16 +54,14 @@ public class LoginActivity extends AppCompatActivity {
                 return;
             }
             loadingProgressBar.setVisibility(View.GONE);
-            if (loginResult.getError() != null) {
+
+            if (loginResult.isSuccess()) {
+                updateUiWithUser(loginResult.getSuccess());
+                setResult(Activity.RESULT_OK);
+                finish();
+            } else {
                 showLoginFailed(loginResult.getError());
             }
-            if (loginResult.getSuccess() != null) {
-                updateUiWithUser(loginResult.getSuccess());
-            }
-            setResult(Activity.RESULT_OK);
-
-            //Complete and destroy login activity once successful
-            finish();
         });
 
         TextWatcher afterTextChangedListener = new TextWatcher() {
